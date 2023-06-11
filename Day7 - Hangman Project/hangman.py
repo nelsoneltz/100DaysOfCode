@@ -2,7 +2,6 @@ import random
 import hangman_art
 import hangman_words_list
 
-
 print(hangman_art.logo)
 
 word  = random.choice(hangman_words_list.words_list)
@@ -39,6 +38,3 @@ while not endgame:
     if '_' not in blank_list:
         endgame = True
         print("You won!")
-    
-
-
