@@ -16,3 +16,12 @@ greet_with_name("NAME")
 # name is the Parameter
 # NAME is the Argument
 ```
+
+- Multiple inputs can be given to function:
+```python
+def greet(name,location):
+    print(f'hi {name}')
+    print(f"How's the weather in {location}?")
+
+greet('nome','place')
+```
