@@ -7,6 +7,7 @@
 #     print('An exception ocurred:', type(error).__name__)
 
 
+<<<<<<< HEAD
 # dit = {"Bug":"Insert text here",
 #        "Text":"Anything"
 # }
@@ -44,3 +45,24 @@ def format_name(f_name,l_name):
 formated = format_name("neSleons",'testdD')
 print(formated)
 
+=======
+dit = {"Bug":"Insert text here",
+       "Text":"Anything"
+}
+
+for key in dit:
+    print(dit[key])
+    print(dit)
+
+
+# travel_log = {
+#     "France": ["Paris","Lille","Dijon"],
+#     "Berlin":{
+#         "City": 1,
+#         "Capital":123
+#     }
+# }
+
+# print(travel_log['France'][0])
+# print(travel_log['Berlin']['City'])
+>>>>>>> 4f681d150c6bc497e85ed2118b90724474c49a6e
