@@ -7,21 +7,22 @@
 #     print('An exception ocurred:', type(error).__name__)
 
 
-# dit = {"Bug":"Insert text here",
-#        "Text":"Anything"
-# }
-
-# for key in dit:
-#     print(dit[key])
-
-
-travel_log = {
-    "France": ["Paris","Lille","Dijon"],
-    "Berlin":{
-        "City": 1,
-        "Capital":123
-    }
+dit = {"Bug":"Insert text here",
+       "Text":"Anything"
 }
 
-print(travel_log['France'][0])
-print(travel_log['Berlin']['City'])
+for key in dit:
+    print(dit[key])
+    print(dit)
+
+
+# travel_log = {
+#     "France": ["Paris","Lille","Dijon"],
+#     "Berlin":{
+#         "City": 1,
+#         "Capital":123
+#     }
+# }
+
+# print(travel_log['France'][0])
+# print(travel_log['Berlin']['City'])
