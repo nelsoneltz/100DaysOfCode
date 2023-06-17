@@ -6,3 +6,4 @@
 
 - Functions with outputs;
 - Functions with multiple outputs;
+- Docstrings;
