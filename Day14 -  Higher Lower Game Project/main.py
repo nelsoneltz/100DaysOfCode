@@ -1,8 +1,8 @@
 from game_data import data
 import art
 from random import randint
-from time import sleep
-# print(art.logo)
+
+print(art.logo)
 
 
 def random_data():
