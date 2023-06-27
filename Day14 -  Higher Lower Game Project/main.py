@@ -14,37 +14,41 @@ def winner(a,b):
         return a
     else:
         return b
-
-value_a = random_data()
-value_b = random_data()
-
-while value_a == value_b:
+def game():
+    value_a = random_data()
     value_b = random_data()
 
-score = 0
+    while value_a == value_b:
+        value_b = random_data()
 
-print(f"Compare A: {value_a['name']}, a {value_a['description']}, from {value_a['country']}.")
-print(art.vs)
-print(f"Compare B: {value_b['name']}, a {value_b['description']}, from {value_b['country']}.")
+    score = 0
+    end_game = False
 
-result = winner(value_a,value_b)
+    while not end_game:
+        print(f"Compare A: {value_a['name']}, a {value_a['description']}, from {value_a['country']}.")
+        print(art.vs)
+        print(f"Compare B: {value_b['name']}, a {value_b['description']}, from {value_b['country']}.")
 
-anwser = input("Who has more followers? Type 'A' or 'B': ")
-if anwser == 'A':
-    anwser = value_a
-elif anwser == 'B':
-    anwser = value_b
+        result = winner(value_a,value_b)
 
-if anwser == result:
-    score+= 1
-    print(score)
-else:
-    print("end_game")
+        anwser = input("Who has more followers? Type 'A' or 'B': ")
+        if anwser == 'A':
+            anwser = value_a
+        elif anwser == 'B':
+            anwser = value_b
 
+        if anwser == result:
+            score+= 1
+            print(f"Right! Your score is: {score}\n")
+            value_a = value_b
+            value_b = random_data()
+            while value_a == value_b:
+                value_b = random_data()
+        else:
+            print(f"\nYou lose! Your final score was: {score}\n")
+            end_game = True
 
-
-
-
+game()
 
 # PRINT LOGO
 
