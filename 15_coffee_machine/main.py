@@ -14,15 +14,58 @@ def process_coins(quarters:int,dimes:int,nickles:int,pennies:int):
 
 def is_available(beverage):
     if 'milk' in MENU[beverage]['ingredients']:
+        missing = []
+        if MENU[beverage]['ingredients']['water'] > resources['water']:
+            missing.append('water') 
+        if MENU[beverage]['ingredients']['coffee'] > resources['coffee']:
+            missing.append('coffee') 
+        if MENU[beverage]['ingredients']['milk'] > resources['milk']:
+            missing.append('milk') 
+
         if MENU[beverage]['ingredients']['water'] < resources['water'] and MENU[beverage]['ingredients']['coffee'] < resources['coffee'] and MENU[beverage]['ingredients']['milk'] < resources['milk']:
-            return True
+            return True,missing
         else:
-            return False
+            return False,missing
     else:
+        missing = []
+        if MENU[beverage]['ingredients']['water'] > resources['water']:
+            missing.append('water') 
+        if MENU[beverage]['ingredients']['coffee'] > resources['coffee']:
+            missing.append('coffee') 
+
         if MENU[beverage]['ingredients']['water'] < resources['water'] and MENU[beverage]['ingredients']['coffee'] < resources['coffee']:
-            return True
+            return True,missing
         else:
-            return False
+            return False,missing
+
+def machine_choice(prompt):
+    boleano,lista = is_available(prompt)
+    if not boleano:
+        for item in lista:
+            print(f'Sorry there is not enough {item}')
+    else:
+        print("Please insert coins.")
+        quarter = int(input("How many quarters?: "))
+        dime = int(input("How many dimes?: "))
+        nickle = int(input("How many nickles?: "))
+        penny = int(input("How many pennies?: "))
+        money = process_coins(quarter,dime,nickle,penny)
+        if money == MENU[prompt]['cost']:
+            print("Here is your coffee!")
+            resources['money'] += money
+        elif money < MENU[prompt]['cost']:
+            print("Sorry that's not enough money. Money refunded")
+        elif money > MENU[prompt]['cost']:
+            print(f"Here is your coffe, and also ${money-MENU[prompt]['cost']} for your change.")
+            resources['money'] += money
+
+
+
+# for value in MENU:
+#     boleano,lista = is_available(value)
+#     if not boleano:
+#         for item in lista:
+#             print(f'Sorry there is not enough {item}')
 
 
 
@@ -37,16 +80,11 @@ while not is_on:
         print(f'Money: ${resources["money"]}')
     elif prompt == 'off':
         is_on = True
-    # elif prompt == 'test':
-    #     print(process_coins(1,2,3,4))
     elif prompt == 'espresso':
-        print(prompt)
-        print(MENU[prompt]['cost'])
+        machine_choice(prompt)            
     elif prompt == 'latte':
-        print(prompt)
-        print(MENU[prompt]['cost'])
+        machine_choice(prompt)            
     elif prompt == 'capuccino':
-        print(prompt)
-        print(MENU[prompt]['cost'])
+        machine_choice(prompt)            
     else:
         continue
