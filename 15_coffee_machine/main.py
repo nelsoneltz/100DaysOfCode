@@ -69,7 +69,7 @@ def machine_choice(prompt):
 
 
 
-is_on = False
+is_on = True
 
 while not is_on:
     prompt = input("What would you like? (espresso/latte/capuccino): ")
@@ -79,7 +79,7 @@ while not is_on:
         print(f'Coffee: {resources["coffee"]}g')
         print(f'Money: ${resources["money"]}')
     elif prompt == 'off':
-        is_on = True
+        is_on = False
     elif prompt == 'espresso':
         machine_choice(prompt)            
     elif prompt == 'latte':
