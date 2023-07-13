@@ -68,7 +68,6 @@ def count_down(count):
 window = Tk()
 window.title('Pomodoro App')
 window.config(padx=100,pady=50,bg=YELLOW)
-window.after(ms=1000,)
 
 title_label = Label(text='TIMER',fg=GREEN,font=(FONT_NAME,50),bg=YELLOW)
 title_label.grid(column=1,row=0)
