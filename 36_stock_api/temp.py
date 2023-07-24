@@ -6,12 +6,12 @@ from datetime import datetime
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
-daily_params = {
+search_params = {
     'function':'SYMBOL_SEARCH',
-    'keywords':'Petrobras',
+    'keywords':'petroleo brasileiro',
     'apikey':api_key
 
 }
 
-response = requests.get(STOCK_ENDPOINT,params=daily_params)
+response = requests.get(STOCK_ENDPOINT,params=search_params)
 print(response.json())
