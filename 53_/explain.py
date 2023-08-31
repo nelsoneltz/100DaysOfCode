@@ -1,0 +1,1 @@
+print("Due to error in the current Google Chrome Webdriver, automation days are postponed")
